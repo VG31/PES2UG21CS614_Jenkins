@@ -4,12 +4,13 @@ pipeline {
     stage('Build') {
       steps {
         sh 'g++ -o task5 main/task5.cpp'
+        sh 'nonexistent_command' // Intentional Error
         echo 'Build Successful!'
       }
     }
     stage('Test') {
       steps {
-        sh './task5'
+        sh 'nonexistent_command' // Intentional Error
         echo 'Test Successful!'
       }
     }
