@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'g++ -o task5 main/hello.cpp'
+        sh 'g++ -o task5 main/task5.cpp'
         echo 'Build Successful!'
       }
     }
@@ -15,6 +15,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
+        sh 'nonexistent_command' // Intentional Error
         echo 'Successfully deployed!'
       }
     }
